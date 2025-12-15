@@ -1,0 +1,16 @@
+import { Link } from "react-router-dom"
+
+export default function Header() {
+    return (
+        <header>
+            <Link to="/" className="header-logo">
+                #VanLife
+            </Link>
+
+            <nav className="header-nav">
+                <Link to="/about">About</Link>
+                <Link to="">Vans</Link>
+            </nav>
+        </header>
+    )
+}
