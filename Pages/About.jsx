@@ -16,7 +16,7 @@ export default function About() {
                 <section>
                     <h1>Your destination is waiting. <br />
                         Your van is ready.</h1>
-                    <Link to="" className="about-main-link">Explore our vans</Link>
+                    <Link to="/vans" className="about-main-link">Explore our vans</Link>
                 </section>
             </main>
             
