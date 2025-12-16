@@ -7,6 +7,7 @@ import Vans from './Pages/Vans';
 import Header from './components/Header';
 import Footer from './components/Footer';
 import { makeServer } from "./server"
+import VanDetail from './Pages/VanDetail';
 
 makeServer()
 
@@ -18,6 +19,7 @@ function App() {
       <Route path="/" element={<Home/>}></Route>
       <Route path="/about" element={<About/>}></Route>
       <Route path="/vans" element={<Vans/>}></Route>
+      <Route path="/vans/:id" element={<VanDetail/>}></Route>
     </Routes>
     <Footer/>
     </>
