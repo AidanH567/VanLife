@@ -6,6 +6,9 @@ import About from "./Pages/About"
 import Vans from './Pages/Vans';
 import Header from './components/Header';
 import Footer from './components/Footer';
+import { makeServer } from "./server"
+
+makeServer()
 
 function App() {
   return (

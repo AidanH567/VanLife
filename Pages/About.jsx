@@ -6,7 +6,7 @@ import { Link } from "react-router-dom"
 export default function About() {
     return (
         <>
-            <Header></Header>
+           
             <main className="about-main">
                 <img src="../assets/aboutPhoto.png" alt="" />
                 <h1>Don’t squeeze in a sedan when you could relax in a van.</h1>
@@ -19,7 +19,7 @@ export default function About() {
                     <Link to="" className="about-main-link">Explore our vans</Link>
                 </section>
             </main>
-            <Footer></Footer>
+            
         </>
     )
 }
