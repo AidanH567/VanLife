@@ -102,3 +102,44 @@ a:active {
 .home-main-link:visited {
   color: white;
 }
+.about-main {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    flex-direction: column;
+    padding: 50px;
+    max-width: 100%;
+    height: auto;
+    padding: 0 500px;
+    margin: auto;
+    font-size: 18px;
+    line-height: 1.6;
+    background-color: #FFF7ED;
+}
+.about-main section {
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: start;
+    padding: 20px;
+    background-color: #FFCC8D;
+    margin-top: 30px;
+    margin-bottom: 100px;
+    border-radius: 5px;
+    font-size: 14;
+    width: 500px;
+    
+}
+
+.about-main-link,
+.about-main-link:visited {
+    color: white;
+    background-color: black;
+    height: 40px;
+    width: 174px;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    text-align: center;
+    border-radius: 3px;
+}
