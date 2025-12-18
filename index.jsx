@@ -12,26 +12,35 @@ import Layout from './components/Layout';
 import Dashboard from './Pages/Host/Dashboard';
 import Income from './Pages/Host/Income';
 import Reviews from './Pages/Host/Reviews';
+import HostLayout from "./Pages/Host/HostLayout";
 
 makeServer()
 
 function App() {
   return (
     <BrowserRouter>
-      <Routes >
+      <Routes>
         <Route element={<Layout />}>
-          <Route path="/" element={<Home />}></Route>
-          <Route path="/about" element={<About />}></Route>
-          <Route path="/host" element={<Dashboard />}></Route>
-          <Route path="/host/income" element={<Income />}></Route>
-          <Route path="/host/reviews" element={<Reviews />}></Route>
-          <Route path="/vans" element={<Vans />}></Route>
-          <Route path="/vans/:id" element={<VanDetail />}></Route>
+
+          <Route index element={<Home />} />
+          <Route path="about" element={<About />} />
+
+          {/* HOST PARENT ROUTE */}
+          <Route path="host" element={<HostLayout />}>
+            <Route index element={<Dashboard />} />
+            <Route path="income" element={<Income />} />
+            <Route path="reviews" element={<Reviews />} />
+          </Route>
+
+          <Route path="vans" element={<Vans />} />
+          <Route path="vans/:id" element={<VanDetail />} />
+
         </Route>
       </Routes>
     </BrowserRouter>
   )
 }
+
 
 ReactDOM
   .createRoot(document.getElementById('root'))
