@@ -1,14 +1,15 @@
 import {Outlet} from "react-router-dom"
 import Header from "../../components/Header"
-import { Link } from "react-router-dom"
+import { Link,NavLink } from "react-router-dom"
 
 export default function Layout() {
+    const activeStyle = { fontWeight: "bold", textDecoration: "underline",color: "#161616" }
     return (
         <>
             <nav>
-                <Link to="/host">Dashboard</Link>
-                <Link to="/host/income">Income</Link>
-                <Link to="/host/reviews">Reviews</Link>     
+                <NavLink style={({isActive})=> isActive ? activeStyle : null} to="/host" end>Dashboard</NavLink>
+                <NavLink style={({isActive})=> isActive ? activeStyle : null} to="/host/income">Income</NavLink>
+                <NavLink style={({isActive})=> isActive ? activeStyle : null} to="/host/reviews">Reviews</NavLink>     
             </nav>
             <Outlet/>
         </>
