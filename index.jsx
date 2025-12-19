@@ -13,6 +13,8 @@ import Dashboard from './Pages/Host/Dashboard';
 import Income from './Pages/Host/Income';
 import Reviews from './Pages/Host/Reviews';
 import HostLayout from "./Pages/Host/HostLayout";
+import HostVanDetail from './Pages/Host/HostVanDetail';
+import HostVan from './Pages/Host/HostVan';
 
 makeServer()
 
@@ -30,6 +32,8 @@ function App() {
             <Route index element={<Dashboard />} />
             <Route path="income" element={<Income />} />
             <Route path="reviews" element={<Reviews />} />
+            <Route path="vans" element={<HostVan />} />
+          <Route path="vans/:id" element={<HostVanDetail/>} />
           </Route>
 
           <Route path="vans" element={<Vans />} />
