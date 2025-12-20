@@ -67,7 +67,6 @@ export default function HostVanDetail() {
           <p className="van-price">
             <span>${van.price}</span>/day
           </p>
-          <p>{van.description}</p>
           <button className="link-button">Rent this van</button>
         </div>
       ) : (
