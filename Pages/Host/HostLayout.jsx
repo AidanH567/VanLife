@@ -7,10 +7,10 @@ export default function Layout() {
     return (
         <>
             <nav>
-                <NavLink style={({isActive})=> isActive ? activeStyle : null} to="/host" end>Dashboard</NavLink>
-                <NavLink style={({isActive})=> isActive ? activeStyle : null} to="/host/income">Income</NavLink>
-                <NavLink style={({isActive})=> isActive ? activeStyle : null} to="/host/reviews">Reviews</NavLink>
-                <NavLink style={({isActive})=> isActive ? activeStyle : null} to="/host/vans">Vans</NavLink>     
+                <NavLink style={({isActive})=> isActive ? activeStyle : null} to="." end>Dashboard</NavLink>
+                <NavLink style={({isActive})=> isActive ? activeStyle : null} to="income">Income</NavLink>
+                <NavLink style={({isActive})=> isActive ? activeStyle : null} to="reviews">Reviews</NavLink>
+                <NavLink style={({isActive})=> isActive ? activeStyle : null} to="vans">Vans</NavLink>     
             </nav>
             <Outlet/>
         </>

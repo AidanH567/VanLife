@@ -15,6 +15,10 @@ import Reviews from './Pages/Host/Reviews';
 import HostLayout from "./Pages/Host/HostLayout";
 import HostVanDetail from './Pages/Host/HostVanDetail';
 import HostVan from './Pages/Host/HostVan';
+import HostVanInfo from './Pages/Host/HostVanInfo';
+import HostVanPricing from './Pages/Host/HostVanPricing';
+import HostVanPhoto from './Pages/Host/HostVanPhoto';
+
 
 makeServer()
 
@@ -22,28 +26,33 @@ function App() {
   return (
     <BrowserRouter>
       <Routes>
-        <Route element={<Layout />}>
-
+        <Route path="/" element={<Layout />}>
           <Route index element={<Home />} />
           <Route path="about" element={<About />} />
 
-          {/* HOST PARENT ROUTE */}
+          <Route path="vans" element={<Vans />} />
+          <Route path="vans/:id" element={<VanDetail />} />
+
           <Route path="host" element={<HostLayout />}>
             <Route index element={<Dashboard />} />
             <Route path="income" element={<Income />} />
             <Route path="reviews" element={<Reviews />} />
             <Route path="vans" element={<HostVan />} />
-          <Route path="vans/:id" element={<HostVanDetail/>} />
+
+            {/* ✅ Parent route is HostVanDetail */}
+            <Route path="vans/:id" element={<HostVanDetail />}>
+              <Route index element={<HostVanInfo />} />
+              <Route path="pricing" element={<HostVanPricing />} />
+              <Route path="photos" element={<HostVanPhoto />} />
+            </Route>
           </Route>
-
-          <Route path="vans" element={<Vans />} />
-          <Route path="vans/:id" element={<VanDetail />} />
-
         </Route>
       </Routes>
     </BrowserRouter>
   )
 }
+            
+             
 
 
 ReactDOM

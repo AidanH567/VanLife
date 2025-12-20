@@ -1,5 +1,6 @@
 import React from "react"
 import { useParams } from "react-router-dom"
+import { Link, Outlet } from "react-router-dom"
 
 export default function HostVanDetail() {
   // ✅ Make sure this matches your route param name.
@@ -52,6 +53,7 @@ export default function HostVanDetail() {
 
   return (
     <div className="van-detail-container">
+        <Link to=".." relative="path">Back to Vans</Link>
       {van ? (
         <div className="van-detail">
           <img src={van.imageUrl} alt={van.name} />
@@ -66,6 +68,7 @@ export default function HostVanDetail() {
       ) : (
         <h2>Loading...</h2>
       )}
+        <Outlet />
     </div>
   )
 }
