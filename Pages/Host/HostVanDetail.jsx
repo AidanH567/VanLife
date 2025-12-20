@@ -1,8 +1,13 @@
 import React from "react"
 import { useParams } from "react-router-dom"
-import { Link, Outlet } from "react-router-dom"
+import { Link, Outlet, NavLink } from "react-router-dom"
 
 export default function HostVanDetail() {
+    const activeStyles = {
+        fontWeight: "bold",
+        textDecoration: "underline",
+        color: "#161616"
+    }
   // ✅ Make sure this matches your route param name.
   // If your route is "/vans/:id" then keep { id }.
   // If your route is "/vans/:vanId" then change to { vanId } and use that below.
@@ -68,7 +73,30 @@ export default function HostVanDetail() {
       ) : (
         <h2>Loading...</h2>
       )}
-        <Outlet />
+      <nav className="host-van-detail-nav">
+                <NavLink
+                    to="."
+                    end
+                    style={({ isActive }) => isActive ? activeStyles : null}
+                >
+                    Details
+                </NavLink>
+                <NavLink
+                    to="pricing"
+                    end
+                    style={({ isActive }) => isActive ? activeStyles : null}
+                >
+                    Pricing
+                </NavLink>
+                 <NavLink
+                    to="Photos"
+                    end
+                    style={({ isActive }) => isActive ? activeStyles : null}
+                >
+                    Photos
+                </NavLink>
+                </nav>
+        <Outlet context={{van}}/>
     </div>
   )
 }
