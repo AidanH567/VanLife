@@ -7,8 +7,8 @@ export default function Vans() {
     const typeFilter = searchParams.get("type")
 
     const displayedVans = typeFilter ?
-    vans.filter( van => van.type===typeFilter)
-    : vans
+        vans.filter(van => van.type === typeFilter)
+        : vans
 
     useEffect(() => {
         fetch("/api/vans")
@@ -33,13 +33,40 @@ export default function Vans() {
 
     ))
 
+     function handleFilterChange(key, value) {
+        setSearchParams(prevParams => {
+            if (value === null) {
+                prevParams.delete(key)
+            } else {
+                prevParams.set(key, value)
+            }
+            return prevParams
+        })
+    }
+
     return <div className="van-list-container">
             <h1>Explore our van options</h1>
             <div className="van-list-filter-buttons">
-            <Link to="?type=simple">Simple</Link>
-            <Link to="?type=rugged">Rugged</Link>
-            <Link to="?type=luxury">Luxury</Link>
-            <Link to=".">Clear</Link>
+                <button
+                    onClick={() => handleFilterChange("type", "simple")}
+                    className={`van-type ${typeFilter === "simple" ? "simple selected" : "simple"}`}
+                >Simple</button>
+                <button
+                    onClick={() => handleFilterChange("type", "luxury")}
+                    className={`van-type ${typeFilter === "luxury" ? "luxury selected" : "luxury"}`}
+                >Luxury</button>
+                <button
+                    onClick={() => handleFilterChange("type", "rugged")}
+                    className={`van-type ${typeFilter === "rugged" ? "rugged selected" : "rugged"}`}
+                >Rugged</button>
+
+                {typeFilter ? (
+                    <button
+                        onClick={() => handleFilterChange("type", null)}
+                        className="van-type clear-filters"
+                    >Clear filter</button>
+                ) : null}
+
             </div>
             <div className="van-list">
                 {vanElements}
